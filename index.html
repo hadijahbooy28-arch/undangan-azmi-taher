@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Undangan Azmi & Taher</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-family: Georgia, serif;
+      background: #f8f4ee;
+      color: #57483e;
+    }
+    main {
+      padding: 28px;
+      max-width: 440px;
+    }
+    h1 { font-weight: normal; }
+    .name {
+      font-size: 26px;
+      margin: 20px 0;
+    }
+    a {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #8b7563;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p>Kepada Yth.</p>
+    <h1>Bapak/Ibu</h1>
+    <div class="name" id="guestName">Tamu Undangan</div>
+    <p>Dengan penuh kebahagiaan, kami mengundang Anda untuk menghadiri hari istimewa kami.</p>
+    <a href="https://azmi-taher-wedding.my.canva.site/1">Buka Undangan</a>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get("to");
+    document.getElementById("guestName").textContent =
+      name ? name.replace(/\+/g, " ").trim() : "Tamu Undangan";
+  </script>
+</body>
+</html>
